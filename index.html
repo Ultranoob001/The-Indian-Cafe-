@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Indian Table</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0f0f0f;
+color:#fff;
+}
+
+header{
+background:#111;
+padding:18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#ffb347;
+}
+
+.cart{
+background:#ffb347;
+color:#000;
+padding:10px 15px;
+border-radius:8px;
+font-weight:bold;
+}
+
+.hero{
+height:80vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80');
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:48px;
+}
+
+.hero p{
+margin-top:10px;
+font-size:18px;
+color:#ddd;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+background:#ffb347;
+color:#000;
+padding:12px 22px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.section{
+padding:50px 20px;
+}
+
+.section h2{
+text-align:center;
+margin-bottom:30px;
+color:#ffb347;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:#1b1b1b;
+border-radius:15px;
+overflow:hidden;
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card-content{
+padding:15px;
+}
+
+.price{
+color:#ffb347;
+font-weight:bold;
+margin:10px 0;
+}
+
+button{
+width:100%;
+padding:10px;
+border:none;
+background:#ffb347;
+font-weight:bold;
+cursor:pointer;
+border-radius:8px;
+}
+
+.about{
+max-width:800px;
+margin:auto;
+text-align:center;
+line-height:1.7;
+color:#ddd;
+}
+
+.contact{
+text-align:center;
+}
+
+.whatsapp{
+background:#25D366;
+color:white;
+padding:15px 25px;
+display:inline-block;
+text-decoration:none;
+border-radius:10px;
+margin-top:15px;
+}
+
+footer{
+text-align:center;
+padding:25px;
+background:#111;
+color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">The Indian Table</div>
+<div class="cart">Cart: <span id="count">0</span></div>
+</header>
+
+<section class="hero">
+<div>
+<h1>Authentic Indian Flavours</h1>
+<p>Fresh • Hygienic • Delicious</p>
+<a href="#menu" class="btn">Order Now</a>
+</div>
+</section>
+
+<section class="section" id="menu">
+<h2>Popular Menu</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641">
+<div class="card-content">
+<h3>Paneer Tikka</h3>
+<div class="price">₹249</div>
+<button onclick="addCart()">Add To Cart</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7">
+<div class="card-content">
+<h3>Butter Chicken</h3>
+<div class="price">₹349</div>
+<button onclick="addCart()">Add To Cart</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512058564366-18510be2db19">
+<div class="card-content">
+<h3>Veg Biryani</h3>
+<div class="price">₹199</div>
+<button onclick="addCart()">Add To Cart</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38">
+<div class="card-content">
+<h3>Pizza</h3>
+<div class="price">₹299</div>
+<button onclick="addCart()">Add To Cart</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2>About Us</h2>
+<div class="about">
+The Indian Table brings authentic Indian taste with modern dining experience. Fresh ingredients, premium quality and unforgettable flavours.
+</div>
+</section>
+
+<section class="section">
+<h2>Contact & Order</h2>
+<div class="contact">
+<p>Open Daily: 10 AM - 11 PM</p>
+<a class="whatsapp" href="https://wa.me/919999999999">
+Order On WhatsApp
+</a>
+</div>
+</section>
+
+<footer>
+© 2026 The Indian Table
+</footer>
+
+<script>
+let count=0;
+
+function addCart(){
+count++;
+document.getElementById("count").innerText=count;
+}
+</script>
+
+</body>
+</html>
